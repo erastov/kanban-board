@@ -4,7 +4,12 @@
     <div class="card" v-for="item in items" :key="item.id">
         <div class="card-block">
           <h5 class="card-title"><span class="text-muted">#{{item.id}}</span>
-          {{item.text}} <span :class="badgeClass(item)">{{badgeText(item)}}</span></h5>
+          {{item.text}}
+            <span :class="badgeClass(item)">{{badgeText(item)}}</span>
+            <span :class="priorityClass[item.priority]">
+              <v-icon dark>{{priorityIcon[item.priority]}}</v-icon>
+            </span>
+          </h5>
         </div>
     </div>
   </div>
@@ -33,6 +38,22 @@ const badgeDetail = {
 
 export default {
   name: 'Backlog',
+  data() {
+    return {
+      priorityClass: {
+        1: 'badge badge-danger',
+        2: 'badge badge-primary',
+        3: 'badge badge-warning',
+        4: 'badge badge-info',
+      },
+      priorityIcon: {
+        1: 'block',
+        2: 'warning',
+        3: 'arrow_upward',
+        4: 'arrow_downward'
+      }
+    };
+  },
   components: {
     'new-item': NewItemForm
   },
