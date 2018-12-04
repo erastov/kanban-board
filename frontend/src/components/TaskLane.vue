@@ -36,7 +36,7 @@ export default {
         return this.items;
       },
       set(items) {
-        this.$store.commit('updateItems', {
+        this.$store.dispatch('updateItems', {
           items,
           id: this.id
         });

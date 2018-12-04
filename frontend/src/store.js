@@ -14,6 +14,19 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    updateItems(context, { items, id }) {
+      let ok = true;
+      items.forEach((item) => {
+        item.type = id;
+        axios.patch(`/api/task/${item.id}`, item)
+          .catch(() => {
+            ok = false;
+          });
+      });
+      if (ok) {
+        context.commit('updateItems', { items, id });
+      }
+    },
     addItem(context, item) {
       axios.post('/api/task', item)
         .then((response) => {

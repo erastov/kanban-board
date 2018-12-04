@@ -19,7 +19,7 @@ export default {
       if (this.itemText) {
         this.$store.dispatch('addItem', {
           text: this.itemText,
-          type: 1
+          type: 'todo'
         });
 
         this.itemText = '';
