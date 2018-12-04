@@ -28,8 +28,9 @@ export default {
   computed: {
     itemCount() {
       if (!this.items) return '';
-      if (this.items.length === 1) return '1 task';
-      return `${this.items.length} tasks`;
+      if (this.items.length === 1) return '1 задача';
+      if ([2, 3, 4].includes(this.items.length)) return `${this.items.length} задачи`;
+      return `${this.items.length} задач`;
     },
     draggables: {
       get() {

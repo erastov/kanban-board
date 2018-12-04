@@ -1,8 +1,8 @@
 <template>
   <div class="menubar">
       <div class="btn-group" role="group" aria-label="Menu bar">
-          <router-link to="/board" :class="buttonClass('/board')">Board <i class="fa fa-th-large" aria-hidden="true"></i></router-link>
-          <router-link to="/backlog" :class="buttonClass('/backlog')">Backlog <i class="fa fa-list" aria-hidden="true"></i></router-link>
+          <router-link to="/board" :class="buttonClass('/board')">Доска <i class="fa fa-th-large" aria-hidden="true"></i></router-link>
+          <router-link to="/backlog" :class="buttonClass('/backlog')">Журнал <i class="fa fa-list" aria-hidden="true"></i></router-link>
       </div>
   </div>
 </template>

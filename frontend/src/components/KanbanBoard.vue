@@ -2,13 +2,13 @@
   <div class="board">
     <div class="row">
         <div class="col-md">
-          <task-lane id="todo" title="Todo" :items="todoItems"></task-lane>
+          <task-lane id="todo" title="Запланировано" :items="todoItems"></task-lane>
         </div>
         <div class="col-md">
-          <task-lane id="inProgress" title="In progress" :items="inProgressItems"></task-lane>
+          <task-lane id="inProgress" title="В работе" :items="inProgressItems"></task-lane>
         </div>
         <div class="col-md">
-          <task-lane id="done" title="Done" :items="doneItems"></task-lane>
+          <task-lane id="done" title="Готово" :items="doneItems"></task-lane>
         </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="add-item">
         <form action="#" method="post" v-on:submit.prevent="submitForm">
-            <input type="text" v-model="itemText" placeholder="Add something to the backlog">
+            <input type="text" v-model="itemText" placeholder="Добавить задачу в журнал">
         </form>
     </div>
 </template>
