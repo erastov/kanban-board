@@ -1,7 +1,6 @@
 <template>
   <div class="backlog-view">
     <new-item></new-item>
-
     <div class="card" v-for="item in items" :key="item.id">
         <div class="card-block">
           <h5 class="card-title"><span class="text-muted">#{{item.id}}</span>

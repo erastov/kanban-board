@@ -18,6 +18,9 @@ export default {
         'btn-secondary': this.$route.path !== path
       };
     }
+  },
+  created() {
+    this.$store.dispatch('loadData');
   }
 };
 </script>

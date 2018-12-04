@@ -27,10 +27,7 @@ export default {
     todoItems: s => s.items.todo,
     inProgressItems: s => s.items.inProgress,
     doneItems: s => s.items.done
-  }),
-  created() {
-    this.$store.dispatch('loadData');
-  }
+  })
 };
 </script>
 
