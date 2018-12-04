@@ -17,8 +17,9 @@ export default {
   methods: {
     submitForm() {
       if (this.itemText) {
-        this.$store.commit('addItem', {
-          text: this.itemText
+        this.$store.dispatch('addItem', {
+          text: this.itemText,
+          type: 1
         });
 
         this.itemText = '';

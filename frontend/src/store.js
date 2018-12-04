@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -10,13 +11,19 @@ export default new Vuex.Store({
       todo: [],
       inProgress: [],
       done: []
-    },
-    nextId: 1
+    }
+  },
+  actions: {
+    addItem(context, item) {
+      axios.post('/api/task', item)
+        .then((response) => {
+          context.commit('addItem', response.data);
+        });
+    }
   },
   mutations: {
     addItem(state, item) {
-      state.items.todo.push(Object.assign(item, { id: state.nextId }));
-      state.nextId += 1;
+      state.items.todo.push(item);
     },
     updateItems(state, { items, id }) {
       state.items[id] = items;
