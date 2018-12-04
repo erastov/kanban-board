@@ -9,10 +9,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = fs.SQLAlchemy(app)
 
 
+class Type(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Unicode)
+
+
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Unicode)
-    type = db.Column(db.Unicode)
+    type = db.Column(db.Integer, db.ForeignKey('type.id'))
 
 
 # Create the database tables.
