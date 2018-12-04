@@ -17,17 +17,17 @@ import NewItemForm from './NewItemForm';
 
 const badgeDetail = {
   todo: {
-    text: 'todo',
+    text: 'запланировано',
     class: 'badge badge-light'
   },
 
   inProgress: {
-    text: 'in progress',
+    text: 'в работе',
     class: 'badge badge-info'
   },
 
   done: {
-    text: 'done',
+    text: 'готово',
     class: 'badge badge-success'
   }
 };
