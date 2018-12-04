@@ -14,6 +14,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    loadData({ commit }) {
+      axios.get('/api/task').then((response) => {
+        commit('loadData', response.data.objects);
+      });
+    },
     updateItems(context, { items, id }) {
       let ok = true;
       items.forEach((item) => {
@@ -35,6 +40,11 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    loadData(state, items) {
+      state.items.todo = items.filter(obj => obj.type === 'todo');
+      state.items.inProgress = items.filter(obj => obj.type === 'inProgress');
+      state.items.done = items.filter(obj => obj.type === 'done');
+    },
     addItem(state, item) {
       state.items.todo.push(item);
     },
