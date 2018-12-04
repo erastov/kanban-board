@@ -45,7 +45,8 @@ export default {
       if (this.itemText) {
         this.$store.dispatch('addItem', {
           text: this.itemText,
-          type: 'todo'
+          type: 'todo',
+          priority: this.priority
         });
 
         this.itemText = '';

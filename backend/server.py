@@ -13,6 +13,7 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Unicode)
     type = db.Column(db.Unicode)
+    priority = db.Column(db.Integer)
 
 
 # Create the database tables.
